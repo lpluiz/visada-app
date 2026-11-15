@@ -15,6 +15,7 @@
   --larg: 1180px;
   --titulo: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --corpo: "Inter", "Segoe UI", system-ui, sans-serif;
+  --saida: cubic-bezier(0.23, 1, 0.32, 1);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -28,8 +29,10 @@ b { color: #fff; font-weight: 600; }
 
 /* ---------- topo ---------- */
 .topo { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px max(16px, calc((100% - var(--larg)) / 2)); background: rgba(10, 19, 14, .78); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(34, 57, 43, .7); }
+.marca-grupo { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .marca { display: flex; align-items: center; gap: 10px; color: var(--texto); text-decoration: none; font: 700 19px var(--titulo); letter-spacing: .14em; }
 .marca img { border-radius: 8px; }
+.topo-autor { color: var(--suave); font-size: 13px; white-space: nowrap; padding-left: 14px; border-left: 1px solid var(--linha); }
 .topo nav { display: flex; gap: 4px; align-items: center; }
 .topo nav a { color: var(--suave); text-decoration: none; font-size: 14.5px; padding: 7px 12px; border-radius: 8px; transition: color .15s, background .15s; }
 .topo nav a:hover { color: var(--texto); background: rgba(255, 255, 255, .05); }
@@ -175,6 +178,7 @@ b { color: #fff; font-weight: 600; }
 }
 @media (max-width: 640px) {
   .topo nav a:not(.nav-baixar) { display: none; }
+  .topo-autor { display: none; }
   .secao { padding-top: 76px; }
   .numeros { grid-template-columns: 1fr 1fr; }
   .numeros div { padding: 16px; }
@@ -183,7 +187,31 @@ b { color: #fff; font-weight: 600; }
   .autor { flex-direction: column; align-items: flex-start; }
   .lead { font-size: 17px; }
 }
+/* ---------- entrada ao rolar ---------- */
+.js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .62s var(--saida), transform .62s var(--saida); transition-delay: var(--rd, 0s); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+/* defasagem dos grupos de cima (marcados no HTML) */
+.hero-texto > *:nth-child(2) { --rd: .06s; }
+.hero-texto > *:nth-child(3) { --rd: .12s; }
+.hero-texto > *:nth-child(4) { --rd: .18s; }
+.hero-texto > *:nth-child(5) { --rd: .24s; }
+.hero-tela { --rd: .18s; }
+.numeros > div:nth-child(2) { --rd: .08s; }
+.numeros > div:nth-child(3) { --rd: .16s; }
+.numeros > div:nth-child(4) { --rd: .24s; }
+
+/* ---------- micro-interações de toque/mouse ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .etapas li { transition: transform .25s var(--saida), border-color .25s; }
+  .etapas li:hover { transform: translateY(-4px); border-color: #36573f; }
+  .modelos article { transition: transform .25s var(--saida), border-color .25s; }
+  .modelos article:hover { transform: translateY(-4px); }
+  .selos li { transition: transform .2s var(--saida), border-color .2s, color .2s; }
+  .selos li:hover { transform: translateY(-2px); border-color: #36573f; color: var(--texto); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
 }

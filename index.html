@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
 <title>VISADA · Planejamento de enlaces de rádio sobre o terreno</title>
 <meta name="description" content="VISADA: Verificação Integrada de Sinal, Alcance, Desdobramento e Antenas. Planeje redes de rádio HF, VHF, UHF e SHF sobre o relevo real, com Longley-Rice, ITU-R P.533 e cobertura por radiais.">
 <meta name="author" content="Luiz Paulo Santos">
@@ -19,7 +20,10 @@
 <body>
 
 <header class="topo">
-  <a class="marca" href="#inicio" aria-label="VISADA, início"><img src="img/visada.png" alt="" width="34" height="34"><span>VISADA</span></a>
+  <div class="marca-grupo">
+    <a class="marca" href="#inicio" aria-label="VISADA, início"><img src="img/visada.png" alt="" width="34" height="34"><span>VISADA</span></a>
+    <span class="topo-autor">© Luiz Paulo Santos</span>
+  </div>
   <nav aria-label="Seções">
     <a href="#como">Como funciona</a>
     <a href="#demonstracoes">Demonstrações</a>
@@ -34,21 +38,21 @@
 <!-- ============ ABERTURA ============ -->
 <section class="hero">
   <div class="hero-texto">
-    <p class="sobretitulo"><span class="ponto"></span>Verificação Integrada de Sinal, Alcance, Desdobramento e Antenas</p>
-    <h1>Veja se o rádio tem <em>visada</em> antes, durante o planejamento.</h1>
-    <p class="lead">O VISADA planeja redes de rádio sobre o relevo real. Monte as redes, posicione os postos no mapa e saiba, enlace por enlace, quanto sinal sobra, de HF a SHF.</p>
-    <div class="acoes">
+    <p class="sobretitulo" data-reveal><span class="ponto"></span>Verificação Integrada de Sinal, Alcance, Desdobramento e Antenas</p>
+    <h1 data-reveal>Veja se o rádio tem <em>visada</em> durante o planejamento.</h1>
+    <p class="lead" data-reveal>O VISADA planeja redes de rádio sobre o relevo real. Monte as redes, posicione os postos no mapa e saiba, enlace por enlace, quanto sinal sobra, de HF a SHF.</p>
+    <div class="acoes" data-reveal>
       <a class="botao primario" href="#demonstracoes">Ver as demonstrações</a>
       <a class="botao" href="#baixar">Baixar para Windows</a>
     </div>
-    <ul class="selos">
+    <ul class="selos" data-reveal>
       <li>HF · VHF · UHF · SHF</li>
       <li>Longley-Rice (ITM)</li>
       <li>ITU-R P.533</li>
       <li>Roda da pasta</li>
     </ul>
   </div>
-  <figure class="hero-tela">
+  <figure class="hero-tela" data-reveal>
     <svg class="fresnel" viewBox="0 0 600 140" aria-hidden="true">
       <defs><linearGradient id="gf" x1="0" x2="1"><stop offset="0" stop-color="#3da5ff"/><stop offset=".5" stop-color="#3ccf8e"/><stop offset="1" stop-color="#ff7a5a"/></linearGradient></defs>
       <path d="M20 110 Q300 -20 580 110" fill="none" stroke="url(#gf)" stroke-width="2" stroke-dasharray="6 7" class="onda"/>
@@ -66,10 +70,10 @@
 
 <!-- ============ NÚMEROS ============ -->
 <section class="numeros" aria-label="O VISADA em números">
-  <div><b>4</b><span>faixas: HF, VHF, UHF e SHF, cada uma com o modelo certo</span></div>
-  <div><b>29</b><span>rádios no catálogo, com antenas, cabos e limiares das fichas</span></div>
-  <div><b>30 m</b><span>de passo no perfil do terreno, ao longo do círculo máximo</span></div>
-  <div><b>1.440</b><span>radiais na mancha de cobertura, uma a cada 0,25°</span></div>
+  <div data-reveal="num"><b>4</b><span>faixas: HF, VHF, UHF e SHF, cada uma com o modelo certo</span></div>
+  <div data-reveal="num"><b>29</b><span>rádios no catálogo, com antenas, cabos e limiares das fichas</span></div>
+  <div data-reveal="num"><b>30 m</b><span>de passo no perfil do terreno, ao longo do círculo máximo</span></div>
+  <div data-reveal="num"><b>1.440</b><span>radiais na mancha de cobertura, uma a cada 0,25°</span></div>
 </section>
 
 <!-- ============ COMO FUNCIONA ============ -->
@@ -191,6 +195,47 @@
     <div class="demo-telas">
       <button class="ampliar grande" data-img="demo/perfil-shf.jpg" data-leg="Enlace SHF: perfil do terreno e a margem nos dois sentidos."><img src="demo/perfil-shf.jpg" alt="Enlace sobre um lago com o perfil do terreno embaixo do mapa" loading="lazy" width="1600" height="900"></button>
       <button class="ampliar" data-img="demo/antena-3d.jpg" data-leg="Antena em 3D: o lóbulo da antena omnidirecional, com os cortes vertical e horizontal."><img src="demo/antena-3d.jpg" alt="Vista 3D do lóbulo de uma antena omnidirecional" loading="lazy" width="1100" height="760"></button>
+    </div>
+  </article>
+</section>
+
+<!-- ============ MAIS RECURSOS ============ -->
+<section id="recursos" class="secao">
+  <div class="cabeca">
+    <p class="rotulo">Mais do VISADA</p>
+    <h2>Do melhor ponto até como chegar nele.</h2>
+    <p class="sub">Além dos enlaces, o VISADA ajuda a escolher onde ficar e a traçar o deslocamento até o posto.</p>
+  </div>
+
+  <article class="demo">
+    <div class="demo-texto">
+      <h3>Procurar o melhor lugar, num raio de 500 m</h3>
+      <p>Clique com o <b>botão direito</b> num posto e o VISADA testa uma grade de pontos num <b>raio de 500 m</b>. Cada ponto recebe a cor da margem do pior enlace, nos dois sentidos, e a tabela mostra onde a visada fecha melhor. No exemplo, mover o posto 400 m ao norte ganha <b>6,3 dB</b>.</p>
+      <dl class="fatos">
+        <div><dt>Raio</dt><dd>500 m</dd></div>
+        <div><dt>No exemplo</dt><dd>+6,3 dB</dd></div>
+        <div><dt>Decisão</dt><dd>na hora</dd></div>
+      </dl>
+      <p>Verde fecha com folga, amarelo fica instável, vermelho não fecha. O ponto de borda branca é o melhor; um clique move o posto para lá.</p>
+    </div>
+    <div class="demo-telas">
+      <button class="ampliar grande" data-img="demo/melhor-lugar.jpg" data-leg="Varredura de 500 m: cada ponto pela margem do pior enlace, e a tabela com os melhores pontos. 400 m ao norte ganham 6,3 dB."><img src="demo/melhor-lugar.jpg" alt="Grade de pontos coloridos num raio de 500 m ao redor de um posto, com a tabela das melhores posições" loading="lazy" width="1600" height="900"></button>
+    </div>
+  </article>
+
+  <article class="demo">
+    <div class="demo-texto">
+      <h3>Como chegar ao posto</h3>
+      <p>Escolhido o ponto, o VISADA traça o <b>caminho até ele</b> sobre as estradas do OpenStreetMap, de carro, caminhão ou a pé. Mostra distância, tempo, os quilômetros de estrada de terra e o trecho fora de estrada, e dá até três alternativas, com prioridade para rodovia e estrada.</p>
+      <dl class="fatos">
+        <div><dt>Modos</dt><dd>3</dd></div>
+        <div><dt>No exemplo</dt><dd>11,2 km</dd></div>
+        <div><dt>Exporta</dt><dd>PDF e HTML</dd></div>
+      </dl>
+      <p>O caminho sai em PDF e em HTML de página única. Cada pessoa usa a própria chave do OpenRouteService, que fica só no navegador dela.</p>
+    </div>
+    <div class="demo-telas">
+      <button class="ampliar grande" data-img="demo/acesso-caminho.jpg" data-leg="Como chegar ao posto: caminho entre dois pontos sobre as estradas do OpenStreetMap, pintado por tipo de via, com distância e tempo."><img src="demo/acesso-caminho.jpg" alt="Caminho de carro entre dois pontos numa cidade, linha azul sobre a imagem de satélite" loading="lazy" width="1600" height="900"></button>
     </div>
   </article>
 </section>

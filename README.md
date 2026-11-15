@@ -12,7 +12,7 @@
 
 ---
 
-Este repositório guarda o **site** do VISADA. O programa para Windows fica em **[lpluiz/visada-windows](https://github.com/lpluiz/visada-windows)**. O código-fonte do programa não é público.
+Este repositório guarda o **site** do VISADA. O programa para Windows (o `visada.exe`) fica na aba **[Releases](https://github.com/lpluiz/visada-windows/releases/latest)** do repositório de download. O código-fonte do programa não é público.
 
 - **Site:** `index.html`, `estilo.css`, `site.js`, imagens em `img/` e `demo/`.
 - **Demonstrações:** `demo/` tem telas e documentos gerados pelo próprio VISADA.
