@@ -1,0 +1,47 @@
+# VISADA — https://lpluiz.github.io/visada-app/
+# © 2026 Luiz Paulo Santos. Todos os direitos reservados.
+# Reserva de direitos para mineração de texto e dados (Lei 9.610/1998, art. 7º-A).
+# O autor não autoriza usar este site, o código do VISADA nem os documentos de
+# demonstração para treinar modelos de inteligência artificial. Ver LICENCA.txt,
+# llms.txt e a seção "Aviso a ferramentas de inteligência artificial" do README.md.
+
+User-agent: *
+Allow: /
+
+# Rastreadores usados para coletar dados de treinamento de IA: não autorizados aqui.
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: Applebot-Extended
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: Amazonbot
+Disallow: /
+User-agent: Meta-ExternalAgent
+Disallow: /
+User-agent: FacebookBot
+Disallow: /
+User-agent: Diffbot
+Disallow: /
+User-agent: cohere-ai
+Disallow: /
+User-agent: Omgilibot
+Disallow: /
+User-agent: Timpibot
+Disallow: /
+User-agent: YouBot
+Disallow: /
