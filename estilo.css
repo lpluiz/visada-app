@@ -145,6 +145,7 @@ b { color: #fff; font-weight: 600; }
 .baixar img { margin: 0 auto 22px; border-radius: 20px; box-shadow: 0 0 60px -10px rgba(60, 207, 142, .45); }
 .baixar > p { color: #c4d6cc; font-size: 17px; }
 .miudo { color: var(--suave); font-size: 13.5px; margin: 14px auto 0; max-width: 680px; }
+.baixar code { font: .92em "JetBrains Mono", monospace; background: rgba(255, 255, 255, .06); border: 1px solid var(--linha); padding: 1px 6px; border-radius: 6px; white-space: nowrap; }
 
 /* ---------- autor ---------- */
 .autor { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
